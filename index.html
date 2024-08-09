@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width; initial-scale=1.0">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins">
         <title>kephalosk | Four Card Section</title>
         <style>
             .attribution {
@@ -14,19 +15,142 @@
             .attribution a { color:
                     hsl(228, 45%, 44%);
             }
+
+            .cardBox {
+                border-radius: 10px;
+                box-shadow: 0 20px 30px -10px hsl(229, 6%, 66%);
+                margin: 24px 12px;
+                max-width: 350px;
+                padding: 24px;
+                width: 100%;
+            }
+
+            .cardBoxHeaderContainer {
+                align-items: start;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+            }
+
+            .cardBoxIconContainer {
+                align-items: flex-end;
+                align-self: end;
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: row;
+            }
+
+            .cardGrid {
+                align-items: center;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                @media (max-width: 1300px) {
+                    align-items: center;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: repeat(3,auto);
+                }
+            }
+
+            .cardGridCol {
+                @media (max-width: 1300px) {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            .headerLabel {
+                align-items: center;
+                align-self: center;
+                text-align: center;
+            }
+
+            .headerP {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .topBorderGreen {
+                border-top: 4px solid hsl(180, 62%, 55%);
+            }
+
+            .topBorderRed {
+                border-top: 4px solid hsl(0, 78%, 62%);
+            }
+
+            .topBorderYellow {
+                border-top: 4px solid hsl(34, 97%, 64%);
+            }
+
+            .topBorderBlue {
+                border-top: 4px solid hsl(212, 86%, 64%);
+            }
+
+            body {
+                align-items: center;
+                background-color: hsl(0, 0%, 98%);
+                color: hsl(229, 6%, 66%);
+                display: flex;
+                flex-direction: column;
+                font-family: Poppins,sans-serif;
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 30px;
+                font-weight: normal;
+                text-align: center;
+            }
+
+            h2 {
+                color: hsl(234, 12%, 34%);
+            }
+
+            header p {
+                align-items: center;
+                align-self: center;
+                justify-content: center;
+                letter-spacing: 1px;
+                margin-bottom: 36px;
+                margin-top: 24px;
+                max-width: 500px;
+                text-align: center;
+                width: 100%;
+            }
+
+            label {
+                color: hsl(234, 12%, 34%);
+                font-size: 30px;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            main {
+                margin: 85px 0;
+            }
+
+            p {
+                line-height: 150%;
+            }
         </style>
     </head>
     <body>
         <main>
             <header>
                 <h1>Reliable, efficient delivery</h1>
-                <label>Powered by Technology</label>
-                <p>Our Artificial Intelligence powered tools use millions of project data points
-                    to ensure that your project is successful</p>
+                <div class="headerLabel">
+                    <label>Powered by Technology</label>
+                </div>
+                <div class="headerP">
+                    <p>Our Artificial Intelligence powered tools use millions of project data points
+                        to ensure that your project is successful</p>
+                </div>
             </header>
             <section class="cardGrid">
-                <div class="carGridCol1">
-                    <div class="cardBox">
+                <div class="cardGridCol">
+                    <div class="cardBox topBorderGreen">
                         <div class="cardBoxHeaderContainer">
                             <h2>Supervisor</h2>
                             <p>Monitors activity to identify project roadblocks</p>
@@ -36,8 +160,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="carGridCol2">
-                    <div class="cardBox">
+                <div class="cardGridCol">
+                    <div class="cardBox topBorderRed">
                         <div class="cardBoxHeaderContainer">
                             <h2>Team Builder</h2>
                             <p>Scans our talent network to create the optimal team for your project</p>
@@ -46,7 +170,7 @@
                             <img src="images/icon-team-builder.svg" alt="supervisor icon">
                         </div>
                     </div>
-                    <div class="cardBox">
+                    <div class="cardBox topBorderYellow">
                         <div class="cardBoxHeaderContainer">
                             <h2>Karma</h2>
                             <p>Regularly evaluates our talent to ensure quality</p>
@@ -56,8 +180,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="carGridCol3">
-                    <div class="cardBox">
+                <div class="cardGridCol">
+                    <div class="cardBox topBorderBlue">
                         <div class="cardBoxHeaderContainer">
                             <h2>Calculator</h2>
                             <p>Uses data from past projects to provide better delivery estimates</p>
